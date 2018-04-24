@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 
 import kotlinx.android.synthetic.main.activity_hola_mundo.*
 
@@ -18,6 +19,12 @@ class HolaMundo : AppCompatActivity() {
 
         Log.i("Ciclo de vida Activity","Inició la actividad")
 
+        val text1 = "Inició la Activity!!!"
+        val duration = Toast.LENGTH_SHORT
+
+        val toast1 = Toast.makeText(applicationContext, text1, duration)
+        toast1.show()
+
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
@@ -27,6 +34,12 @@ class HolaMundo : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         Log.i("Ciclo de vida Activity","Finalizó la actividad")
+
+        val text2 = "Finalizó la Activity!!!"
+        val duration = Toast.LENGTH_SHORT
+
+        val toast2 = Toast.makeText(applicationContext, text2, duration)
+        toast2.show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
